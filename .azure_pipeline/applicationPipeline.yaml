@@ -1,6 +1,9 @@
 name: java-build_N_deploy-pipeline
 
-pool: Azure Pipelines
+pool:
+  name: Default
+  demands:
+  - Agent.Name -equals lenovo_windows
 
 trigger: none
 
