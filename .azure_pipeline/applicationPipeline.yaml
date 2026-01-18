@@ -1,9 +1,6 @@
 name: java-build_N_deploy-pipeline
 
-pool:
-  name: Default
-  demands:
-  - Agent.Name -equals lenovo_windows
+pool: Self-Hosted
 
 trigger: none
 
@@ -22,12 +19,12 @@ stages:
                 java --version
                 mvn --version
 
-          # - task: JavaToolInstaller@1
-          #   displayName: Java Install
-          #   inputs:
-          #     versionSpec: '21.0.9'
-          #     jdkArchitectureOption: 'x86'
-          #     jdkSourceOption: 'PreInstalled'
+          - task: JavaToolInstaller@1
+            displayName: Java Install
+            inputs:
+              versionSpec: '21.0.9'
+              jdkArchitectureOption: 'x86'
+              jdkSourceOption: 'PreInstalled'
 
       - job: mavenBuild
         displayName: Build with Maven
