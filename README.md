@@ -1,2 +1,2 @@
-# java-practice-project
+# java-login-application
 Java Login Application
