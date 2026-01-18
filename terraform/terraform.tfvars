@@ -12,6 +12,3 @@ vm_password = "rootadmin@123"
 
 # Enter the subscription id
 subscription_id = "bd7b142b-030a-46e3-8a31-579ffb9d2046"
-
-# Enter the Azure Pat
-azure_devops_pat = "BQirBUIWohcyLPfYkb1wps0UoQ6mK3s3vHiTlpHJmZBTlJOrxpx0JQQJ99CAACAAAAAAAAAAAAASAZDO1EkD"
