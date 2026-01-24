@@ -4,6 +4,12 @@ run-name: terraform-workflow-${{ github.run_id }} deploy-by ${{ github.actor }}
 
 on:
   workflow_dispatch:
+    inputs:
+      run_job:
+        description: 'Run Job'
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -24,6 +30,8 @@ jobs:
 
   terraform-apply:
     uses: anurag-vj/devops-cicd-library/.github/workflows/terraform_apply.yaml@main
+    needs: terraform-init-plan
+    if: ${{ github.event.inputs.run_job == 'true' }}
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
