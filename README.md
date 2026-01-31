@@ -1,2 +1,5 @@
-# java-login-application
-Java Login Application
+# java-application-project
+Java Application Project
+
+## License
+MIT
